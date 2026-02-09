@@ -1,0 +1,27 @@
+#Quadrant-based RGB operation
+import cv2
+import numpy as np
+
+img = cv2.imread(r"C:\Users\danes\Desktop\I and VP\Lab_Programs\Sample.jpg")
+h, w, _ = img.shape
+
+half_h = h // 2
+half_w = w // 2
+
+result = img.copy()
+
+# First quadrant (Red)
+result[0:half_h, 0:half_w, 0:2] = 0
+
+# Second quadrant (Green)
+result[0:half_h, half_w:w, [0,2]] = 0
+
+# Third quadrant (Blue)
+result[half_h:h, 0:half_w, 1:3] = 0
+
+# Fourth quadrant remains original
+
+cv2.imshow("Quadrant Image", result)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
