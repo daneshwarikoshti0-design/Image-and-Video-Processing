@@ -2,7 +2,7 @@
 import cv2
 
 # Read image
-img = cv2.imread(r"C:\Users\danes\Desktop\I and VP\Lab_Programs\Sample.jpg")
+img = cv2.imread("Sample.jpg")
 
 # Convert to grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
