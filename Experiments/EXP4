@@ -1,7 +1,7 @@
 # Convert image to negative
 import cv2
 
-img = cv2.imread(r"C:\Users\danes\Desktop\I and VP\Lab_Programs\Sample.jpg")
+img = cv2.imread("Sample.jpg")
 
 negative = 255 - img
 
