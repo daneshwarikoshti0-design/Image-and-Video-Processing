@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread(r"C:\Users\danes\Desktop\I and VP\Lab_Programs\Sample.jpg")
+img = cv2.imread("Sample.jpg")
 h, w, _ = img.shape
 
 half_h = h // 2
