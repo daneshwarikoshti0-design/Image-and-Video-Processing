@@ -1,0 +1,33 @@
+#Implement 2D Convolution
+import numpy as np
+import cv2
+
+def convolution2d(image, kernel):
+    h, w = image.shape
+    kh, kw = kernel.shape
+    pad_h = kh // 2
+    pad_w = kw // 2
+
+    padded = np.pad(image, ((pad_h, pad_h), (pad_w, pad_w)), mode='constant')
+    output = np.zeros_like(image)
+
+    for i in range(h):
+        for j in range(w):
+            region = padded[i:i+kh, j:j+kw]
+            output[i, j] = np.sum(region * kernel)
+
+    return output
+
+# Read image
+img = cv2.imread(Sample.jpg", 0)
+
+# Define kernel (example: smoothing)
+kernel = np.ones((3,3)) / 9
+
+conv_img = convolution2d(img, kernel)
+
+cv2.imshow("Original", img)
+cv2.imshow("Convolved Image", conv_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
