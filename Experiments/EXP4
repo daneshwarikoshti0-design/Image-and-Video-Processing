@@ -1,0 +1,13 @@
+# Convert image to negative
+import cv2
+
+img = cv2.imread(r"C:\Users\danes\Desktop\I and VP\Lab_Programs\Sample.jpg")
+
+negative = 255 - img
+
+cv2.imshow("Original", img)
+cv2.imshow("Negative", negative)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
